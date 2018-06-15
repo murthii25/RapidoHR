@@ -1,14 +1,14 @@
 USE [RapidoERP_KMB]
 GO
 
-/****** Object:  Table [dbo].[Employee_Details]    Script Date: 06/15/2018 14:18:50 ******/
+/****** Object:  Table [dbo].[EmployeeDetail]    Script Date: 06/15/2018 14:18:50 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[Employee_Details](
+CREATE TABLE [dbo].[EmployeeDetail](
 	[EmpId] [uniqueidentifier] NOT NULL,
 	[EmpCode] [nvarchar](15) NULL,
 	[FirstName] [nvarchar](50) NULL,
