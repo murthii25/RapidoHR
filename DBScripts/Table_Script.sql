@@ -1,7 +1,15 @@
 USE [RapidoERP_KMB]
 GO
 
-/****** Object:  Table [dbo].[EmployeeDetail]    Script Date: 06/15/2018 14:18:50 ******/
+/****** Object:  Table [dbo].[EmployeeDetail]    Script Date: 06/15/2018 17:42:13 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[EmployeeDetail]') AND type in (N'U'))
+DROP TABLE [dbo].[EmployeeDetail]
+GO
+
+USE [RapidoERP_KMB]
+GO
+
+/****** Object:  Table [dbo].[EmployeeDetail]    Script Date: 06/15/2018 17:42:14 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -22,7 +30,7 @@ CREATE TABLE [dbo].[EmployeeDetail](
 	[ContactNo] [int] NULL,
 	[DateCreated] [datetime] NULL,
 	[Createdby] [nvarchar](30) NULL,
- CONSTRAINT [PK_Employee_Details] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_EmployeeDetails] PRIMARY KEY CLUSTERED 
 (
 	[EmpId] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
