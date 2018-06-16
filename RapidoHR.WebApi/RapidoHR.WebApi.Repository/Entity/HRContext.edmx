@@ -5,6 +5,35 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="RapidoERP_KMBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EMP_Designation">
+          <Key>
+            <PropertyRef Name="EMP_DesId" />
+          </Key>
+          <Property Name="EMP_DesId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DesignationName" Type="nvarchar" MaxLength="20" />
+          <Property Name="Date_created" Type="datetime" />
+          <Property Name="Createdby" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="EMP_Payroll">
+          <Key>
+            <PropertyRef Name="empId" />
+          </Key>
+          <Property Name="empId" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="basic" Type="numeric" Precision="10" Scale="5" />
+          <Property Name="DA" Type="numeric" Precision="10" Scale="5" />
+          <Property Name="HRA" Type="numeric" Precision="10" Scale="5" />
+          <Property Name="conveyance" Type="numeric" Precision="10" Scale="5" />
+          <Property Name="Adhoc_allow" Type="numeric" Precision="10" Scale="5" />
+          <Property Name="PF_bank_by_banj" Type="numeric" Precision="10" Scale="5" />
+          <Property Name="PF_by_emp" Type="numeric" Precision="10" Scale="5" />
+          <Property Name="Professional_tax" Type="numeric" Precision="10" Scale="5" />
+          <Property Name="Festival_advance" Type="numeric" Precision="10" Scale="5" />
+          <Property Name="HG_Insurance" Type="bit" />
+          <Property Name="LIC" Type="bit" />
+          <Property Name="Net_Pay" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="Date_created" Type="datetime" />
+          <Property Name="Createdby" Type="nvarchar" MaxLength="30" />
+        </EntityType>
         <EntityType Name="EmployeeDetail">
           <Key>
             <PropertyRef Name="EmpId" />
@@ -24,6 +53,8 @@
           <Property Name="Createdby" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <EntityContainer Name="RapidoERP_KMBModelStoreContainer">
+          <EntitySet Name="EMP_Designation" EntityType="Self.EMP_Designation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMP_Payroll" EntityType="Self.EMP_Payroll" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmployeeDetail" EntityType="Self.EmployeeDetail" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -32,6 +63,8 @@
       <Schema Namespace="RapidoERP_KMBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="RapidoERP_KMBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="EmployeeDetails" EntityType="RapidoERP_KMBModel.EmployeeDetail" />
+          <EntitySet Name="EMP_Designation" EntityType="RapidoERP_KMBModel.EMP_Designation" />
+          <EntitySet Name="EMP_Payroll" EntityType="RapidoERP_KMBModel.EMP_Payroll" />
         </EntityContainer>
         <EntityType Name="EmployeeDetail">
           <Key>
@@ -49,6 +82,35 @@
           <Property Name="EmailId" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="ContactNo" Type="Int32" />
           <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="Createdby" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EMP_Designation">
+          <Key>
+            <PropertyRef Name="EMP_DesId" />
+          </Key>
+          <Property Name="EMP_DesId" Type="Guid" Nullable="false" />
+          <Property Name="DesignationName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Date_created" Type="DateTime" Precision="3" />
+          <Property Name="Createdby" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EMP_Payroll">
+          <Key>
+            <PropertyRef Name="empId" />
+          </Key>
+          <Property Name="empId" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="basic" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="DA" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="HRA" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="conveyance" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="Adhoc_allow" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="PF_bank_by_banj" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="PF_by_emp" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="Professional_tax" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="Festival_advance" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="HG_Insurance" Type="Boolean" />
+          <Property Name="LIC" Type="Boolean" />
+          <Property Name="Net_Pay" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="Date_created" Type="DateTime" Precision="3" />
           <Property Name="Createdby" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
@@ -73,6 +135,37 @@
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
                 <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMP_Designation">
+            <EntityTypeMapping TypeName="RapidoERP_KMBModel.EMP_Designation">
+              <MappingFragment StoreEntitySet="EMP_Designation">
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="Date_created" ColumnName="Date_created" />
+                <ScalarProperty Name="DesignationName" ColumnName="DesignationName" />
+                <ScalarProperty Name="EMP_DesId" ColumnName="EMP_DesId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMP_Payroll">
+            <EntityTypeMapping TypeName="RapidoERP_KMBModel.EMP_Payroll">
+              <MappingFragment StoreEntitySet="EMP_Payroll">
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="Date_created" ColumnName="Date_created" />
+                <ScalarProperty Name="Net_Pay" ColumnName="Net_Pay" />
+                <ScalarProperty Name="LIC" ColumnName="LIC" />
+                <ScalarProperty Name="HG_Insurance" ColumnName="HG_Insurance" />
+                <ScalarProperty Name="Festival_advance" ColumnName="Festival_advance" />
+                <ScalarProperty Name="Professional_tax" ColumnName="Professional_tax" />
+                <ScalarProperty Name="PF_by_emp" ColumnName="PF_by_emp" />
+                <ScalarProperty Name="PF_bank_by_banj" ColumnName="PF_bank_by_banj" />
+                <ScalarProperty Name="Adhoc_allow" ColumnName="Adhoc_allow" />
+                <ScalarProperty Name="conveyance" ColumnName="conveyance" />
+                <ScalarProperty Name="HRA" ColumnName="HRA" />
+                <ScalarProperty Name="DA" ColumnName="DA" />
+                <ScalarProperty Name="basic" ColumnName="basic" />
+                <ScalarProperty Name="empId" ColumnName="empId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

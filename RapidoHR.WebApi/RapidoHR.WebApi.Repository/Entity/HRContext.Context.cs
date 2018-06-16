@@ -26,5 +26,7 @@ namespace RapidoHR.WebApi.Repository.Entity
         }
     
         public virtual DbSet<EmployeeDetail> EmployeeDetails { get; set; }
+        public virtual DbSet<EMP_Designation> EMP_Designation { get; set; }
+        public virtual DbSet<EMP_Payroll> EMP_Payroll { get; set; }
     }
 }

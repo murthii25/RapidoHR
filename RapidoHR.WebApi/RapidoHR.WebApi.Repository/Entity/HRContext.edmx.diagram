@@ -6,6 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="ba1c011f4e1d4978bc54da0e30c7e700" Name="Diagram1">
         <EntityTypeShape EntityType="RapidoERP_KMBModel.EmployeeDetail" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="RapidoERP_KMBModel.EMP_Designation" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="RapidoERP_KMBModel.EMP_Payroll" Width="1.5" PointX="3.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
