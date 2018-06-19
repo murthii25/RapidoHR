@@ -14,7 +14,13 @@ namespace RapidoHR.WebApi.Repository.Entity
     
     public partial class EmployeeDetail
     {
-        public System.Guid EmpId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public EmployeeDetail()
+        {
+            this.EmpPayrolls = new HashSet<EmpPayroll>();
+        }
+    
+        public System.Guid EmpID { get; set; }
         public string EmpCode { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
@@ -24,8 +30,11 @@ namespace RapidoHR.WebApi.Repository.Entity
         public string Designation { get; set; }
         public string Address { get; set; }
         public string EmailId { get; set; }
-        public Nullable<int> ContactNo { get; set; }
+        public string ContactNo { get; set; }
         public Nullable<System.DateTime> DateCreated { get; set; }
         public string Createdby { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EmpPayroll> EmpPayrolls { get; set; }
     }
 }
