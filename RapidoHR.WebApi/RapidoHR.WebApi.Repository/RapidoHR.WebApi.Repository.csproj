@@ -83,13 +83,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\EmpDesignation.cs">
+      <DependentUpon>HRContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\EmployeeDetail.cs">
       <DependentUpon>HRContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\EMP_Designation.cs">
-      <DependentUpon>HRContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\EMP_Payroll.cs">
+    <Compile Include="Entity\EmpPayroll.cs">
       <DependentUpon>HRContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\HRContext.Context.cs">

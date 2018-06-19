@@ -25,8 +25,8 @@ namespace RapidoHR.WebApi.Repository.Entity
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<EmpDesignation> EmpDesignations { get; set; }
         public virtual DbSet<EmployeeDetail> EmployeeDetails { get; set; }
-        public virtual DbSet<EMP_Designation> EMP_Designation { get; set; }
-        public virtual DbSet<EMP_Payroll> EMP_Payroll { get; set; }
+        public virtual DbSet<EmpPayroll> EmpPayrolls { get; set; }
     }
 }

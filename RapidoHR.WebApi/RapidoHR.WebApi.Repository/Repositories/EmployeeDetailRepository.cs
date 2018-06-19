@@ -53,7 +53,7 @@ namespace RapidoHR.WebApi.Repository.Repositories
         {
             try
             {
-                var local = _context.EmployeeDetails.SingleOrDefault(c => c.EmpId == employee.EmpId);
+                var local = _context.EmployeeDetails.SingleOrDefault(c => c.EmpID == employee.EmpID);
                 if (employee != null)
                 {
                     //Todo add other columns
@@ -74,7 +74,7 @@ namespace RapidoHR.WebApi.Repository.Repositories
         {
             try
             {
-                var entity = _context.EmployeeDetails.SingleOrDefault(c => c.EmpId == empId);
+                var entity = _context.EmployeeDetails.SingleOrDefault(c => c.EmpID == empId);
 
                 if (entity != null)
                 {
@@ -94,7 +94,7 @@ namespace RapidoHR.WebApi.Repository.Repositories
         /// <inheritdoc />
         public EmployeeDetail GetById(Guid id)
         {
-            return _context.EmployeeDetails.SingleOrDefault(c => c.EmpId == id);
+            return _context.EmployeeDetails.SingleOrDefault(c => c.EmpID == id);
         }
         #endregion
     }
