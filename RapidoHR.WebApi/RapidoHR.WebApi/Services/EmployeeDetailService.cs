@@ -77,11 +77,11 @@ namespace RapidoHR.WebApi.Services
                 if (EmployeeDetail != null)
                 {
                     //To do
-                    EmployeeDetail.EmpId = EmployeeDetail.EmpId == Guid.Empty ? Guid.NewGuid() : EmployeeDetail.EmpId;
+                    EmployeeDetail.EmpID = EmployeeDetail.EmpID == Guid.Empty ? Guid.NewGuid() : EmployeeDetail.EmpID;
                     var result = Mapper.Map<EmployeeDetailModel, EmployeeDetail>(EmployeeDetail);
                     _unitofWork.EmployeeDetailRepository.Add(result);
                     _unitofWork.Save();
-                    return EmployeeDetail.EmpId;
+                    return EmployeeDetail.EmpID;
                 }
                 throw new ArgumentException("EmployeeDetail is empty");
             }

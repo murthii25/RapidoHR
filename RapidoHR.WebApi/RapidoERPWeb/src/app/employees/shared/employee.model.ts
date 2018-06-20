@@ -1,7 +1,7 @@
 import { Guid } from "guid-typescript";
 
 export class Employee {
-        EmpId: Guid;
+        EmpID: Guid;
         EmpCode: string;
         FirstName: string;
         MiddleName: string;
