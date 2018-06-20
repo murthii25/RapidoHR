@@ -36,6 +36,23 @@ namespace RapidoHR.WebApi.Controllers
             return Ok(empPayroll);
         }
 
+        // GET: api/EmpCodePayroll/5321
+        [HttpGet, Route("api/EmpCodePayroll/{empCode}")]
+        [ResponseType(typeof(EmpPayroll))]
+        public async Task<IHttpActionResult> GetEmpCodePayroll(string empCode)
+        {
+            var result = await (from e in db.EmployeeDetails
+                          join p in db.EmpPayrolls on e.EmpID equals p.EmpID
+                          where e.EmpCode == empCode
+                                select p).FirstOrDefaultAsync();           
+            //if (result == null)
+            //{
+            //    return NotFound();
+            //}
+
+            return Ok(result);
+        }
+
         // PUT: api/EmpPayrolls/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutEmpPayroll(Guid id, EmpPayroll empPayroll)
