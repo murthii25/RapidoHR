@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import  { EmployeeService } from '../shared/employee.service';
 import { NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
@@ -18,7 +19,7 @@ export class EmployeeComponent implements OnInit {
     if (form != null)
     form.reset();
     this.employeeService.selectedEmployee = {
-      EmpId : null,
+      EmpID : null,
       EmpCode: '',
       FirstName:  '',
       MiddleName: '',
@@ -33,6 +34,24 @@ export class EmployeeComponent implements OnInit {
       Createdby: ''
     }
 
+  }
+  onSubmit(form : NgForm)
+  {
+    if(form.value.EmpID == null)
+    {
+          this.employeeService.PostEmployee(form.value)
+          .subscribe(data => {
+                  this.resetForm(form);
+                  this.employeeService.getEmployeeList();
+                    })
+    }
+    else{     
+      this.employeeService.PutEmployee(form.value.EmpID,form.value)
+      .subscribe(data => {
+              this.resetForm(form);
+              this.employeeService.getEmployeeList();
+                })
+    }
   }
 
 }

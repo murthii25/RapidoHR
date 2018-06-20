@@ -1,10 +1,15 @@
-<form action="" class="emp-form" #employeeForm=ngForm>
-<div class="form-row">  
+
+<form action="" class="emp-form" #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)"> 
+  <div style="text-align: center"><h4>Register Employee</h4></div>   
+  <input  type="hidden" name="EmpID" #EmpID="ngModel" [(ngModel)]="employeeService.selectedEmployee.EmpID">
+  <div class="form-row">  
   <div class="form-group col-md-6">
-    <input  class="form-control" name="FirstName" #FirstName="ngModel" [(ngModel)]="employeeService.selectedEmployee.FirstName" placeholder="FirstName">
+    <input  class="form-control" name="FirstName" #FirstName="ngModel" [(ngModel)]="employeeService.selectedEmployee.FirstName" placeholder="FirstName" required>
+  <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched">The field is required</div>
   </div>
   <div class="form-group col-md-6">
-    <input  class="form-control" name="MiddleName" #MiddleName="ngModel" [(ngModel)]="employeeService.selectedEmployee.MiddleName" placeholder="MiddleName">
+    <input  class="form-control" name="MiddleName" #MiddleName="ngModel" [(ngModel)]="employeeService.selectedEmployee.MiddleName" placeholder="MiddleName" required>
+    <div class="validation-error" *ngIf="MiddleName.invalid && MiddleName.touched">The field is required</div>
   </div>  
 </div>
 <div class="form-group"> 
@@ -12,13 +17,16 @@
  </div>
  <div class="form-row">  
     <div class="form-group col-md-4">
-        <input  class="form-control" name="EmpCode" #EmpCode="ngModel" [(ngModel)]="employeeService.selectedEmployee.EmpCode" placeholder="EmpCode">
+        <input  class="form-control" name="EmpCode" #EmpCode="ngModel" [(ngModel)]="employeeService.selectedEmployee.EmpCode" placeholder="EmpCode" required>
+        <div class="validation-error" *ngIf="EmpCode.invalid && EmpCode.touched">The field is required</div>
       </div>
   <div class="form-group col-md-4">
-    <input  class="form-control" name="Gender" #Gender="ngModel" [(ngModel)]="employeeService.selectedEmployee.Gender" placeholder="Gender">
+    <input  class="form-control" name="Gender" #Gender="ngModel" [(ngModel)]="employeeService.selectedEmployee.Gender" placeholder="Gender" required>
+    <div class="validation-error" *ngIf="Gender.invalid && Gender.touched">The field is required</div>
   </div>
   <div class="form-group col-md-4">
-    <input  class="form-control" name="Nationality" #Nationality="ngModel" [(ngModel)]="employeeService.selectedEmployee.Nationality" placeholder="Nationality">
+    <input  class="form-control" name="Nationality" #Nationality="ngModel" [(ngModel)]="employeeService.selectedEmployee.Nationality" placeholder="Nationality" required>
+    <div class="validation-error" *ngIf="Nationality.invalid && Nationality.touched">The field is required</div>
   </div>  
 </div>
 <div class="form-group"> 
@@ -26,18 +34,21 @@
 </div>
 <div class="form-row">  
   <div class="form-group col-md-4">
-    <input  class="form-control" name="Designation" #Designation="ngModel" [(ngModel)]="employeeService.selectedEmployee.Designation" placeholder="Designation">
+    <input  class="form-control" name="Designation" #Designation="ngModel" [(ngModel)]="employeeService.selectedEmployee.Designation" placeholder="Designation" required>
+    <div class="validation-error" *ngIf="Designation.invalid && Designation.touched">The field is required</div>
   </div>
   <div class="form-group col-md-4">
-    <input  class="form-control" name="EmailId" #Nationality="ngModel" [(ngModel)]="employeeService.selectedEmployee.EmailId" placeholder="EmailId">
+    <input  class="form-control" name="EmailId" #EmailId="ngModel" [(ngModel)]="employeeService.selectedEmployee.EmailId" placeholder="EmailId" required>
+    <div class="validation-error" *ngIf="EmailId.invalid && EmailId.touched">The field is required</div>
   </div> 
   <div class="form-group col-md-4">
-    <input  class="form-control" name="ContactNo" #ContactNo="ngModel" [(ngModel)]="employeeService.selectedEmployee.ContactNo" placeholder="ContactNo">
+    <input  class="form-control" name="ContactNo" #ContactNo="ngModel" [(ngModel)]="employeeService.selectedEmployee.ContactNo" placeholder="ContactNo" required>
+    <div class="validation-error" *ngIf="ContactNo.invalid && ContactNo.touched">The field is required</div>
   </div> 
 </div>
 <div class="form-row">  
   <div class="form-group col-md-8">
-    <button type="submit" class="btn btn-lg btn-block btn-info" ><i class="fa fa-floppy-o"></i> Submit</button>
+    <button type="submit" [disabled]="!employeeForm.valid" class="btn btn-lg btn-block btn-info" ><i class="fa fa-floppy-o"></i> Submit</button>
   </div>
   <div class="form-group col-md-4">
     <button type="button" class="btn btn-lg btn-block btn-secondary" (click) = "resetForm(employeeForm)" ><i class="fa fa-repeat"></i> Reset</button>
