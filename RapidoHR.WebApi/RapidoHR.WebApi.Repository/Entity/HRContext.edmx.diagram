@@ -5,7 +5,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ba1c011f4e1d4978bc54da0e30c7e700" Name="Diagram1">
-        <EntityTypeShape EntityType="RapidoERP_KMBModel.EmployeeDetail" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="RapidoERP_KMBModel.EmpDesignation" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="RapidoERP_KMBModel.EmployeeDetail" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="RapidoERP_KMBModel.EmpPayroll" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="RapidoERP_KMBModel.FK_EmpPayroll_EmployeeDetail" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
