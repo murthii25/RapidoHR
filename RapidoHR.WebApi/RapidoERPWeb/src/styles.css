@@ -1,22 +1,138 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    font-size: 16px;
+}
+h2{
+    color: #0a488e;
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin-bottom: 17px;
+}
+label{
+    margin-bottom: 0.1rem;
+}
+.form-control{
+    font-size: 0.7rem;
+    height: 30px;
+}
+div.validation-error{
+    text-align:left;
+    color: #f70d0d;
+    font-size: 0.7rem;
+}
 form.emp-form
 {
-    background-color: #dbdbdb;
+    background-color: #f3f0f0;
     border-radius:4px;
-    padding: 4px;
+    padding: 12px 30px 30px;
 }
-div.validation-error
-{
-    color:red;
-    text-align: center;
+.form-control:focus{
+    box-shadow: inherit;
+    border-width:2px;
 }
 button:hover,a.btn:hover
 {
     cursor: pointer;
 }
-form.payroll-form
-{
-    background-color: #dbdbdb;
-    border-radius:4px;
-    padding: 4px;
+.navbar{
+    background-color:#1565C0;
+    padding:0;
+    position: relative;
+    padding-bottom:40px;
+    margin-bottom: 20px;
+    margin-top: 1px;
+    border-radius: 5px;
+}
+.navbar ul{
+    position: relative;
+    z-index: 99;
+}
+.navbar a{
+    color:#fff;
+    transition: all 0.5s ease;
+
+}
+.navbar .nav-link{
+padding:.5rem 0.5rem;
+}
+.nav a{
+    color:#fff;
+    font-size: 0.8rem;
+   
+}
+.nav a:hover{
+    color: #8ebdf3;
+}
+.nav span.user-profile{
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: 1px solid #f3f0f0;
+    display: inline-block;
+    position: absolute;
+    left: -19px;
+    top: 10px;
+    text-align: center;
+}
+.side-bar-nav .navbar.side-nav-bar{
+    background-color:#42A5F5;
+    padding: 13px 25px 30px;
+}
+
+.side-bar-nav ul li{
+    position: relative;
+}
+.side-bar-nav .navbar-expand-sm .navbar-nav .dropdown-menu{
+    position: relative;
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-size: 0.8rem;
+}
+.side-bar-nav{
+    transition: all ease 0.5s;
+    
+}
+.side-bar-nav .navbar-expand-sm .navbar-nav .dropdown-menu a:hover,
+.navbar-expand-sm .navbar-nav .nav-link:hover{
+    background-color:transparent;
+    color: #032b58;
+}
+.dropdown-toggle:after{
+    margin-left: .455em;
+    position: relative;
+    top: 5px;
+}
+.btn-primary{
+    background-color:#1565C0;
+    border:none;
+}
+.btn-primary:hover{
+    background-color:rgb(76, 168, 243);
+}
+.btn-secondary{
+    background-color: #969494;
+    border:none;
+}
+.btn-secondary:hover{
+    background-color: #848383;
+}
+.btn{
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    transition:all ease 0.8s;
+}
+textarea.form-control{
+    height: 100px;
+}
+footer{
+    background-color:#cecccc;
+    font-size: 12px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 37px;
+    line-height: 37px;
+    left:0;
+    padding:0 30px;
 }

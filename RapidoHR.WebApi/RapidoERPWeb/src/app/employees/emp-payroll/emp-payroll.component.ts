@@ -5,7 +5,8 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-emp-payroll',
   templateUrl: './emp-payroll.component.html',
-  styleUrls: ['./emp-payroll.component.css']
+  styleUrls: ['./emp-payroll.component.css'],
+  providers : [PayrollService]
 })
 export class EmpPayrollComponent implements OnInit {
 
