@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RapidoHR.WebApi.Model
 {
-    public class EmpPayRollReport
+    public class ReportEmpPayRollModel
     {
         public string EmpName { get; set; }
         public string Designation { get; set; }
