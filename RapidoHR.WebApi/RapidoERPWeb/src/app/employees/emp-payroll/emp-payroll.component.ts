@@ -40,8 +40,8 @@ export class EmpPayrollComponent implements OnInit {
 
   }
   onSubmit(form : NgForm)
-  {
-    if(form.value.EmpID == null)
+  {    
+    if(form.value.EmpPRID === '00000000-0000-0000-0000-000000000000')
     {
           this.payrollService.PostEmpPayroll(form.value)
           .subscribe(data => {
@@ -56,10 +56,11 @@ export class EmpPayrollComponent implements OnInit {
     }
   }
   getEmpPayroll(empCode : string)
-  {
-    debugger;
-   this.payrollService.getEmployeePayroll(empCode);
-   // this.payrollService.selectedEmpPayroll = Object.assign({}, this.payrollService.getEmployeePayroll(empCode));
+  {    
+    this.payrollService.getEmployeePayroll(empCode).subscribe((data)=>{      
+      this.resetForm();
+        this.payrollService.selectedEmpPayroll = Object.assign({}, data.empPayrollModel);        
+  });   
   }
 
 }
