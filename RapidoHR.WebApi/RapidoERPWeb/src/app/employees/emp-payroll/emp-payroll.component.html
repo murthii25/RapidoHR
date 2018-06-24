@@ -10,49 +10,50 @@
 <form action="" class="payroll-form" #payrollForm="ngForm" (ngSubmit)="onSubmit(payrollForm)"> 
   <div style="text-align: center"><h4>Employee Payroll</h4></div>   
   <input  type="hidden" name="EmpPRID" #EmpPRID="ngModel" [(ngModel)]="payrollService.selectedEmpPayroll.EmpPRID">
+  <input  type="hidden" name="EmpID" #EmpID="ngModel" [(ngModel)]="payrollService.selectedEmpPayroll.EmpID">
   <div class="form-row">  
   <div class="form-group col-md-4">
     <input  class="form-control" name="basic" #basic="ngModel" [(ngModel)]="payrollService.selectedEmpPayroll.basic" placeholder="basic" required>
-  <div class="validation-error" *ngIf="basic.invalid && basic.touched">The field is required</div>
+  <!-- <div class="validation-error" *ngIf="basic.invalid && basic.touched">The field is required</div> -->
   </div>
   <div class="form-group col-md-4">
     <input  class="form-control" name="DA" #DA="ngModel" [(ngModel)]="payrollService.selectedEmpPayroll.DA" placeholder="DA" required>
-    <div class="validation-error" *ngIf="DA.invalid && MiddleName.touched">The field is required</div>
+    <!-- <div class="validation-error" *ngIf="DA.invalid && MiddleName.touched">The field is required</div> -->
   </div> 
   <div class="form-group col-md-4">
       <input  class="form-control" name="HRA" #HRA="ngModel" [(ngModel)]="payrollService.selectedEmpPayroll.HRA" placeholder="HRA" required>
-      <div class="validation-error" *ngIf="HRA.invalid && HRA.touched">The field is required</div>
+      <!-- <div class="validation-error" *ngIf="HRA.invalid && HRA.touched">The field is required</div> -->
     </div> 
 </div>
 <div class="form-row">    
   <div class="form-group col-md-6">
     <input  class="form-control" name="conveyance" #conveyance="ngModel" [(ngModel)]="payrollService.selectedEmpPayroll.conveyance" placeholder="conveyance" required>
-    <div class="validation-error" *ngIf="conveyance.invalid && conveyance.touched">The field is required</div>
+    <!-- <div class="validation-error" *ngIf="conveyance.invalid && conveyance.touched">The field is required</div> -->
   </div>
   <div class="form-group col-md-6">
     <input  class="form-control" name="Adhoc_allow" #Adhoc_allow="ngModel" [(ngModel)]="payrollService.selectedEmpPayroll.Adhoc_allow" placeholder="Adhoc allow" required>
-    <div class="validation-error" *ngIf="Adhoc_allow.invalid && Adhoc_allow.touched">The field is required</div>
+    <!-- <div class="validation-error" *ngIf="Adhoc_allow.invalid && Adhoc_allow.touched">The field is required</div> -->
   </div>  
 </div>
 
 <div class="form-row">  
     <div class="form-group col-md-4">
         <input  class="form-control" name="PF_bank_by_banj" #PF_bank_by_banj="ngModel" [(ngModel)]="payrollService.selectedEmpPayroll.PF_bank_by_banj" placeholder="PF bank by bank" required>
-        <div class="validation-error" *ngIf="PF_bank_by_banj.invalid && PF_bank_by_banj.touched">The field is required</div>
+        <!-- <div class="validation-error" *ngIf="PF_bank_by_banj.invalid && PF_bank_by_banj.touched">The field is required</div> -->
       </div>
   <div class="form-group col-md-4">
     <input  class="form-control" name="PF_by_emp" #PF_by_emp="ngModel" [(ngModel)]="payrollService.selectedEmpPayroll.PF_by_emp" placeholder="PF by emp" required>
-    <div class="validation-error" *ngIf="PF_by_emp.invalid && PF_by_emp.touched">The field is required</div>
+    <!-- <div class="validation-error" *ngIf="PF_by_emp.invalid && PF_by_emp.touched">The field is required</div> -->
   </div>
   <div class="form-group col-md-4">
     <input  class="form-control" name="Professional_tax" #Professional_tax="ngModel" [(ngModel)]="payrollService.selectedEmpPayroll.Professional_tax" placeholder="Professional tax" required>
-    <div class="validation-error" *ngIf="Professional_tax.invalid && Professional_tax.touched">The field is required</div>
+    <!-- <div class="validation-error" *ngIf="Professional_tax.invalid && Professional_tax.touched">The field is required</div> -->
   </div>  
 </div>
 <div class="form-row">  
     <div class="form-group col-md-4">
         <input  class="form-control" name="Festival_advance" #Festival_advance="ngModel" [(ngModel)]="payrollService.selectedEmpPayroll.Festival_advance" placeholder="Festival advance" required>
-        <div class="validation-error" *ngIf="Festival_advance.invalid && Festival_advance.touched">The field is required</div>
+        <!-- <div class="validation-error" *ngIf="Festival_advance.invalid && Festival_advance.touched">The field is required</div> -->
       </div>
   <div class="form-group col-md-5">
       <div style="text-align: center">
@@ -67,7 +68,7 @@
     </div>
   <div class="form-group col-md-4">
     <input  class="form-control" name="Net_Pay" #Net_Pay="ngModel" [(ngModel)]="payrollService.selectedEmpPayroll.Net_Pay" placeholder="Net Pay" required>
-    <div class="validation-error" *ngIf="Net_Pay.invalid && Net_Pay.touched">The field is required</div>
+    <!-- <div class="validation-error" *ngIf="Net_Pay.invalid && Net_Pay.touched">The field is required</div> -->
   </div>  
 </div>
 

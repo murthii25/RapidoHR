@@ -1,8 +1,8 @@
 import { Guid } from "guid-typescript";
 
 export class Payroll {    
-        EmpPRID: Guid;
-        EmpID : Guid;
+        EmpPRID: Guid | null;
+        EmpID : Guid | null;
         basic: number | null;
         DA: number | null;
         HRA: number | null;

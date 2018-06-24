@@ -14,16 +14,7 @@ export class PayrollService {
   
   getEmployeePayroll(empcode : string)
   {
-    debugger;
-    this.http.get('http://localhost:51504/api/EmpCodePayroll/' + empcode)
-    .map((data : Response)=>{
-      debugger;
-      return data.json() as Payroll;
-    }).toPromise().then(x=>{
-      debugger;
-      console.log(x);
-      this.selectedEmpPayroll = x;
-    })
+    return this.http.get('http://localhost:51504/api/EmpCodePayroll/' + empcode).map(res=>res.json());   
   }
   PostEmpPayroll(emppayroll : Payroll)
   {
@@ -39,7 +30,7 @@ export class PayrollService {
     var requestOptions = new RequestOptions({method:RequestMethod.Put, headers : headerOptions});
     return this.http.put('http://localhost:51504/api/EmpPayrolls/' + id,
     body,
-    requestOptions).map(res=>res.json());
+    requestOptions).map(res => res.json());
   }
 
 }
