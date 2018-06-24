@@ -1,3 +1,22 @@
 <p>
   emp-payroll-reports works!
 </p>
+<h2>Employee List</h2>
+ <table class="table table-sm table-hover"> 
+ <tr *ngFor="let epr of reportsService.selectedEmpPayrollReport">   
+    <td>{{ epr.EmpName }} </td>
+    <td>{{ epr.Basic }}</td>
+    <td>{{ epr.DA }}</td>
+    <td>{{ epr.HRA }}</td>
+    <td>{{ epr.conveyance }}</td>
+    <td>{{ epr.Adhoc_allow }}</td>
+    <td>{{ epr.Total }}</td>
+    <td>{{ epr.PF_bank_by_banj }}</td>
+    <td>{{ epr.PF_by_emp }}</td>
+    <td>{{ epr.Professional_tax }}</td>
+    <td>{{ epr.Festival_advance }}</td>
+    <td>{{ epr.HG_Insurance }}</td>
+    <td>{{ epr.LIC }}</td>
+    <td>{{ epr.Net_Pay }}</td>
+  </tr> 
+</table> 
