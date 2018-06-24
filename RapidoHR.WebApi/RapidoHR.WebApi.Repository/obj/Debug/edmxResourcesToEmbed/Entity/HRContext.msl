@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RapidoERP_KMBModelStoreContainer" CdmEntityContainer="RapidoERP_KMBEntities">
+    <EntitySetMapping Name="EmpDesignations">
+      <EntityTypeMapping TypeName="RapidoERP_KMBModel.EmpDesignation">
+        <MappingFragment StoreEntitySet="EmpDesignation">
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="Date_created" ColumnName="Date_created" />
+          <ScalarProperty Name="DesignationName" ColumnName="DesignationName" />
+          <ScalarProperty Name="EMPDesgID" ColumnName="EMPDesgID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeDetails">
+      <EntityTypeMapping TypeName="RapidoERP_KMBModel.EmployeeDetail">
+        <MappingFragment StoreEntitySet="EmployeeDetail">
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpPayrolls">
+      <EntityTypeMapping TypeName="RapidoERP_KMBModel.EmpPayroll">
+        <MappingFragment StoreEntitySet="EmpPayroll">
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="Date_created" ColumnName="Date_created" />
+          <ScalarProperty Name="Net_Pay" ColumnName="Net_Pay" />
+          <ScalarProperty Name="LIC" ColumnName="LIC" />
+          <ScalarProperty Name="HG_Insurance" ColumnName="HG_Insurance" />
+          <ScalarProperty Name="Festival_advance" ColumnName="Festival_advance" />
+          <ScalarProperty Name="Professional_tax" ColumnName="Professional_tax" />
+          <ScalarProperty Name="PF_by_emp" ColumnName="PF_by_emp" />
+          <ScalarProperty Name="PF_bank_by_banj" ColumnName="PF_bank_by_banj" />
+          <ScalarProperty Name="Adhoc_allow" ColumnName="Adhoc_allow" />
+          <ScalarProperty Name="conveyance" ColumnName="conveyance" />
+          <ScalarProperty Name="HRA" ColumnName="HRA" />
+          <ScalarProperty Name="DA" ColumnName="DA" />
+          <ScalarProperty Name="basic" ColumnName="basic" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="EmpPRID" ColumnName="EmpPRID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

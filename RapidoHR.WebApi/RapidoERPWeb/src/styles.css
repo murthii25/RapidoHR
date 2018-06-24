@@ -1,12 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 body{
     font-size: 16px;
+    padding-bottom:57px;
 }
 h2{
     color: #0a488e;
     font-size: 1.5rem;
-    font-weight: 100;
+    font-weight: 400;
     margin-bottom: 17px;
+}
+h2.page-heading{
+    padding:10px 0;
+    font-size: 2em;
 }
 label{
     margin-bottom: 0.1rem;
@@ -25,7 +30,9 @@ form.emp-form
     background-color: #f3f0f0;
     border-radius:4px;
     padding: 12px 30px 30px;
+   
 }
+
 .form-control:focus{
     box-shadow: inherit;
     border-width:2px;
@@ -39,9 +46,10 @@ button:hover,a.btn:hover
     padding:0;
     position: relative;
     padding-bottom:40px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     margin-top: 1px;
-    border-radius: 5px;
+    border-radius:5px;
+    
 }
 .navbar ul{
     position: relative;
@@ -76,11 +84,19 @@ padding:.5rem 0.5rem;
 }
 .side-bar-nav .navbar.side-nav-bar{
     background-color:#42A5F5;
-    padding: 13px 25px 30px;
+    padding: 13px 15px ;
+    margin-bottom:20px;
+    background-color:#838486;
 }
 
+.side-bar-nav .navbar .nav-link{padding-top:0;padding-bottom:0;}
 .side-bar-nav ul li{
     position: relative;
+}
+.side-bar-nav ul li:not(:first-child){
+    border-left:1px solid #27303a;
+    margin-left:20px;
+    padding-left:30px;
 }
 .side-bar-nav .navbar-expand-sm .navbar-nav .dropdown-menu{
     position: relative;
@@ -93,11 +109,18 @@ padding:.5rem 0.5rem;
     transition: all ease 0.5s;
     
 }
+.side-bar-nav  .navbar-expand-sm .navbar-nav{
+    flex-direction: row !important;
+}
+.side-bar-nav .navbar-expand-sm .navbar-nav{
+    color:#edfedf;
+}
 .side-bar-nav .navbar-expand-sm .navbar-nav .dropdown-menu a:hover,
 .navbar-expand-sm .navbar-nav .nav-link:hover{
     background-color:transparent;
     color: #032b58;
 }
+
 .dropdown-toggle:after{
     margin-left: .455em;
     position: relative;
@@ -126,7 +149,7 @@ textarea.form-control{
     height: 100px;
 }
 footer{
-    background-color:#cecccc;
+    background-color:#efecec;
     font-size: 12px;
     position: fixed;
     bottom: 0;
@@ -135,4 +158,12 @@ footer{
     line-height: 37px;
     left:0;
     padding:0 30px;
+    border-top:1px solid #9a9797;
 }
+.table .fa{
+    font-size:20px;
+} 
+.table td{
+    vertical-align: middle;
+}
+

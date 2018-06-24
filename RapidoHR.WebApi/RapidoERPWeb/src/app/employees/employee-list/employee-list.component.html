@@ -1,15 +1,24 @@
 <h2>Employee List</h2>
  <table class="table table-sm table-hover"> 
+    <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Emp Code</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
  <tr *ngFor="let employee of employeeService.employeeList">   
     <td>{{ employee.FirstName }} - {{ employee.LastName}}</td>
     <td>{{ employee.EmpCode }}</td>
     <td>
-      <a  class="btn" (click)="showForEdit(employee)">
+      <a  class="btn" (click)="showForEdit(employee)" title="Edit">
         <i class="fa fa-pencil-square-o"></i>
       </a>
-      <a  class="btn text-danger " (click) = "onDeleteEmployee(employee.EmpID)">
+      <a  class="btn text-danger " (click) = "onDeleteEmployee(employee.EmpID)"  title="Delete">
           <i class="fa fa-trash-o"></i>
         </a>
     </td>
   </tr> 
+</tbody>
 </table> 

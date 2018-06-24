@@ -1,0 +1,5 @@
+C:\Projects\Git_Root\RapidoHR.WebApi\RapidoHR.WebApi.Model\bin\Debug\RapidoHR.WebApi.Model.dll
+C:\Projects\Git_Root\RapidoHR.WebApi\RapidoHR.WebApi.Model\bin\Debug\RapidoHR.WebApi.Model.pdb
+C:\Projects\Git_Root\RapidoHR.WebApi\RapidoHR.WebApi.Model\obj\Debug\RapidoHR.WebApi.Model.csprojResolveAssemblyReference.cache
+C:\Projects\Git_Root\RapidoHR.WebApi\RapidoHR.WebApi.Model\obj\Debug\RapidoHR.WebApi.Model.dll
+C:\Projects\Git_Root\RapidoHR.WebApi\RapidoHR.WebApi.Model\obj\Debug\RapidoHR.WebApi.Model.pdb
