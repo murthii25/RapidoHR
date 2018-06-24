@@ -22,10 +22,12 @@ export class EmployeeService {
   }
   getEmployeeList()
   {
+    debugger;
     this.http.get('http://localhost:51504/api/EmployeeDetails')
     .map((data : Response)=>{
       return data.json() as Employee[];
     }).toPromise().then(x=>{
+      debugger;
       console.log(x);
       this.employeeList = x;
     })
