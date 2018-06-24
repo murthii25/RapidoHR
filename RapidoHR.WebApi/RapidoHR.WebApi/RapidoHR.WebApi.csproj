@@ -291,6 +291,7 @@
     <Compile Include="Controllers\EmployeeDetailsController.cs" />
     <Compile Include="Controllers\EmpPayrollsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
