@@ -13,8 +13,8 @@ export class EmployeeListComponent implements OnInit {
 
   constructor(private employeeService : EmployeeService) { }
 
-  ngOnInit() {    
-    this.employeeService.getEmployeeList();
+  ngOnInit() {  
+     this.employeeService.getEmployeeList();  
   }
 
   showForEdit(emp : Employee)

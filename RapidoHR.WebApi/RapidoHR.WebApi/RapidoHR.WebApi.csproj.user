@@ -9,6 +9,7 @@
     <WebStackScaffolding_IsAsyncSelected>True</WebStackScaffolding_IsAsyncSelected>
     <UseIISExpress>true</UseIISExpress>
     <WebStackScaffolding_DbContextTypeFullName>RapidoHR.WebApi.Repository.Entity.RapidoERP_KMBEntities</WebStackScaffolding_DbContextTypeFullName>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
