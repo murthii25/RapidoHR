@@ -117,7 +117,12 @@ padding:.5rem 0.5rem;
 .side-bar-nav .navbar-expand-sm .navbar-nav{
     color:#edfedf;
 }
-.side-bar-nav .navbar-expand-sm .navbar-nav .dropdown-menu a:hover,
+.navbar a.active-link{
+    color:#ced0d2;
+}
+.side-bar-nav .navbar-expand-sm .navbar-nav .dropdown-menu a:hover{
+    color:#e3e4e4;
+}
 .navbar-expand-sm .navbar-nav .nav-link:hover{
     background-color:transparent;
     color: #032b58;
