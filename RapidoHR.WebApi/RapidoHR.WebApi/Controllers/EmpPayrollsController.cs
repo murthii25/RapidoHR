@@ -17,12 +17,7 @@ namespace RapidoHR.WebApi.Controllers
     public class EmpPayrollsController : ApiController
     {
         private RapidoERP_KMBEntities db = new RapidoERP_KMBEntities();
-        private string createdBy = "user";
-        // GET: api/EmpPayrolls
-        public IQueryable<EmpPayroll> GetEmpPayrolls()
-        {
-            return db.EmpPayrolls;
-        }
+        private string createdBy = "user";       
 
         // GET: api/EmpPayrolls/5
         [ResponseType(typeof(EmpPayroll))]

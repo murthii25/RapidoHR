@@ -21,14 +21,11 @@ export class EmployeeService {
     return this.http.post('http://localhost:51504/api/EmployeeDetails',body,requestOptions).map(x=>x.json());
   }
   getEmployeeList()
-  {
-    debugger;
+  {    
     this.http.get('http://localhost:51504/api/EmployeeDetails')
     .map((data : Response)=>{
       return data.json() as Employee[];
-    }).toPromise().then(x=>{
-      debugger;
-      console.log(x);
+    }).toPromise().then(x=>{           
       this.employeeList = x;
     })
   }

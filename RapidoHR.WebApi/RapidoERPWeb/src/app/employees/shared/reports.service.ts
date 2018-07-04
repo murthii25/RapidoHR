@@ -8,15 +8,19 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ReportsService {
 
-  selectedEmpPayrollReport : Reportemppayroll;
+  employeePayrollList : Reportemppayroll[];
   constructor(private http : Http) { }
   
   getReportEmployeePayroll()
   {
-    debugger;
-    var headerOptions = new Headers({'Content-Type':'application/json'});
-    var requestOptions = new RequestOptions({method:RequestMethod.Get, headers : headerOptions});
-    return this.http.get('http://localhost:51504/api/ReportEmpPayroll',requestOptions).map(res=>res.json());   
+    
+    return this.http.get('http://localhost:51504/api/ReportEmpPayroll')
+    .map((data : Response)=>{
+      return data.json() as Reportemppayroll[];
+    }).toPromise().then(x=>{                 
+      this.employeePayrollList =x;
+    })
+    
   }
 
 }
