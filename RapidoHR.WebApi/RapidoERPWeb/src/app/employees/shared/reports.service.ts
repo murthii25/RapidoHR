@@ -17,9 +17,7 @@ export class ReportsService {
     return this.http.get('http://localhost:51504/api/ReportEmpPayroll')
     .map((data : Response)=>{
       return data.json() as Reportemppayroll[];
-    }).toPromise().then(x=>{
-           console.log(x.map(x=>x));
-           debugger;
+    }).toPromise().then(x=>{                 
       this.employeePayrollList =x;
     })
     

@@ -51,7 +51,6 @@ namespace RapidoHR.WebApi.Controllers
 
                                     }).ToListAsync();
                 return Ok(result.Select(x=>x.empPayrollModel));
-               // return Ok(result);
             }
             catch(Exception ex)
             {

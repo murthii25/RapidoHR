@@ -25,8 +25,7 @@ export class EmployeeService {
     this.http.get('http://localhost:51504/api/EmployeeDetails')
     .map((data : Response)=>{
       return data.json() as Employee[];
-    }).toPromise().then(x=>{
-           console.log(x);
+    }).toPromise().then(x=>{           
       this.employeeList = x;
     })
   }
