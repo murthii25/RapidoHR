@@ -1,5 +1,6 @@
 export class Reportemppayroll {
         EmpName : string;
+        Designation : string;
         Basic: string;
         DA: string;
         HRA: string;

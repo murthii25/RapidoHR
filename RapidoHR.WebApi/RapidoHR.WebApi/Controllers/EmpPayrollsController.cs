@@ -18,11 +18,48 @@ namespace RapidoHR.WebApi.Controllers
     {
         private RapidoERP_KMBEntities db = new RapidoERP_KMBEntities();
         private string createdBy = "user";
-        // GET: api/EmpPayrolls
-        public IQueryable<EmpPayroll> GetEmpPayrolls()
-        {
-            return db.EmpPayrolls;
-        }
+
+        /// <summary>
+        /// Gets and returns all EmpPayroll.
+        /// </summary>
+        /// <returns>All found EmpPayroll.</returns>
+        //[HttpGet, Route("")]
+        //[ResponseType(typeof(IEnumerable<EmpPayroll>))]       
+        //// GET: api/EmpPayrolls
+        //public async Task<IHttpActionResult> GetEmpPayrolls()
+        //{
+        //    try
+        //    {
+        //        var result = await (from ed in db.EmpPayrolls
+        //                            select new
+        //                            {
+        //                                Reportemppayroll = new EmpPayroll
+        //                                {
+        //                                    Adhoc_allow = ed.Adhoc_allow,
+        //                                    basic = ed.basic,
+        //                                    conveyance = ed.conveyance,
+        //                                    DA = ed.DA,
+        //                                    Date_created = ed.Date_created,
+        //                                    EmpPRID = ed.EmpPRID,
+        //                                    Festival_advance = ed.Festival_advance,
+        //                                    HG_Insurance = ed.HG_Insurance,
+        //                                    HRA = ed.HRA,
+        //                                    LIC = ed.LIC,
+        //                                    Net_Pay = ed.Net_Pay,
+        //                                    PF_bank_by_banj = ed.PF_bank_by_banj,
+        //                                    PF_by_emp = ed.PF_by_emp,
+        //                                    Professional_tax = ed.Professional_tax
+        //                                }
+
+        //                            }).ToListAsync();
+        //        return Ok(result.Select(x => x.Reportemppayroll));
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+           
+        //}
 
         // GET: api/EmpPayrolls/5
         [ResponseType(typeof(EmpPayroll))]

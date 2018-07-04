@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import  { ReportsService } from '../shared/reports.service';
+import { Reportemppayroll } from '../shared/reportemppayroll.model';
 
 @Component({
   selector: 'app-emp-payroll-reports',
@@ -11,13 +12,8 @@ export class EmpPayrollReportsComponent implements OnInit {
 
   constructor(private reportsService : ReportsService) { }
 
-  ngOnInit() {
-    debugger;
-    this.reportsService.getReportEmployeePayroll().subscribe((data)=>{   
-      debugger;  
-      
-        this.reportsService.selectedEmpPayrollReport = data.ReportEmpPayRollModel; 
-  })
+  ngOnInit() {       
+    this.reportsService.getReportEmployeePayroll();
 }
 
 }
