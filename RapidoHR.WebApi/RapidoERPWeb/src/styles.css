@@ -27,7 +27,7 @@ div.validation-error{
 }
 form.hr-form
 {
-    background-color: #f3f0f0;
+    background-color: #e3eefb;
     border-radius:4px;
     padding: 12px 30px 30px;
    
@@ -74,15 +74,19 @@ padding:.5rem 0.5rem;
     color: #8ebdf3;
 }
 .nav span.user-profile{
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     border-radius: 100%;
     border: 1px solid #f3f0f0;
     display: inline-block;
     position: absolute;
-    left: -19px;
-    top: 10px;
+    left: -16px;
+    top: 8px;
     text-align: center;
+}
+.nav span.user-profile i:before{
+    position: relative;
+    top:-2px;
 }
 .side-bar-nav .navbar.side-nav-bar{
     background-color:#42A5F5;
@@ -91,21 +95,36 @@ padding:.5rem 0.5rem;
     background-color:#838486;
 }
 
-.side-bar-nav .navbar .nav-link{padding-top:0;padding-bottom:0;}
+.side-bar-nav .navbar .nav-link{padding-top:0;padding-bottom:0;cursor: pointer;}
 .side-bar-nav ul li{
     position: relative;
 }
-.side-bar-nav ul li:not(:first-child){
+.side-bar-nav ul.navbar-nav li:not(:first-child){
     border-left:1px solid #27303a;
     margin-left:20px;
     padding-left:30px;
 }
+.side-bar-nav ul.dropdown-menu li:not(:first-child){
+border:none;
+border-top:1px solid #acb1b7;
+margin:7px 0 0 0;
+padding:5px 0 0 0;
+}
 .side-bar-nav .navbar-expand-sm .navbar-nav .dropdown-menu{
-    position: relative;
-    background: transparent;
+    position: absolute;
+    background: #63a2e8;
     border: none;
-    padding: 0;
-    font-size: 0.8rem;
+    padding: 8px 10px;
+    font-size: 1rem;
+}
+.side-bar-nav .navbar-expand-sm .navbar-nav .dropdown-menu.report{
+    left:33px;
+}
+.side-bar-nav .navbar-expand-sm .navbar-nav .dropdown-menu a{
+    color:#fff;
+}
+.side-bar-nav .navbar-expand-sm .navbar-nav .dropdown-menu .nav-link:hover{
+    color: #084a96;
 }
 .side-bar-nav{
     transition: all ease 0.5s;
@@ -118,14 +137,14 @@ padding:.5rem 0.5rem;
     color:#edfedf;
 }
 .navbar a.active-link{
-    color:#ced0d2;
+    color:#fff;
 }
 .side-bar-nav .navbar-expand-sm .navbar-nav .dropdown-menu a:hover{
-    color:#e3e4e4;
+    color:#0a4e9c;
 }
 .navbar-expand-sm .navbar-nav .nav-link:hover{
     background-color:transparent;
-    color: #032b58;
+    color: #dddede;
 }
 
 .dropdown-toggle:after{
@@ -152,6 +171,13 @@ padding:.5rem 0.5rem;
     text-transform: uppercase;
     transition:all ease 0.8s;
 }
+.btn-primary.disabled, .btn-primary:disabled{
+    opacity: 0.4;
+    cursor: no-drop;
+}
+.form-control:disabled{
+    cursor: no-drop;
+}
 textarea.form-control{
     height: 100px;
 }
@@ -167,11 +193,30 @@ footer{
     padding:0 30px;
     border-top:1px solid #9a9797;
 }
+.table .table-head{
+    background-color:#1565c0;
+}
+.table .table-head th{
+    color:#fff;
+}
+.table thead th{
+    font-weight: 400;
+    color: #042f61;
+}
+.table thead th.table-main-head{
+    font-weight: 500;
+    text-align: center;
+    font-size: 1.1rem;
+}
 .table .fa{
     font-size:20px;
+    margin-left: 5px;
 } 
 .table td{
     vertical-align: middle;
+}
+.table td.actions .btn{
+    padding:0;
 }
 .ng-valid[required], .ng-valid.required  {
     border-left: 5px solid #42A948; /* green */

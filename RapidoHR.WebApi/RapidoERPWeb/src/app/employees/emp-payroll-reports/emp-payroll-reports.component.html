@@ -1,10 +1,11 @@
 
-<h2>Employee List</h2>
- <table class="table table-sm table-hover"> 
+
+ <table class="table table-sm table-hover emp-payroll-reports table-striped"> 
     <thead>
-      <tr><th colspan="15" style="text-align:center;"> THE KANAKAMAHALAKSHMI CO-OP, BANK LTD,ViSAKHAPATNAM</th></tr>
-      <tr><th colspan="15" style="text-align:center;">Staff Salaries(Regular Employees) for the month of May'2018</th></tr>
-        <tr>
+      <tr><th colspan="16" class="table-main-head"> THE KANAKAMAHALAKSHMI CO-OP, BANK LTD,ViSAKHAPATNAM</th></tr>
+      <tr><th colspan="16"  class="table-main-head">Staff Salaries(Regular Employees) for the month of May'2018</th></tr>
+        <tr class="grid-heading table-head">
+          <th>S.No</th>
           <th>Name of the Employee</th>
           <th>Designation</th>
           <th>Basic</th>
@@ -13,15 +14,25 @@
           <th>Convenancy</th>
           <th>Adhoc allow</th>
           <th>Total</th>
-          <th>P.F by Bank</th>
-          <th>P.F by Employee</th>
-          <th>Professional Tax</th>
-          <th>Festival Advance</th>
-          <th>Health Group Insurance</th>
-          <th>LIC</th>
-          <th>Net Pay</th>
-          <th></th>
+          <th rowspan="2">P.F by Bank</th>
+          <th rowspan="2">P.F by Employee</th>
+          <th rowspan="2">Professional Tax</th>
+          <th rowspan="2">Festival Advance</th>
+          <th rowspan="2">Health Group Insurance</th>
+          <th rowspan="2">LIC</th>
+          <th rowspan="2">Net Pay</th>
         </tr>
+        <tr class="grid-heading table-head">
+          <th></th>
+            <th></th>
+            <th></th>
+            <th>Rs.</th>
+            <th></th>
+            <th>Rs.</th>
+            <th>Pay</th>
+            <th></th>
+            <th>Rs.</th>
+          </tr>
       </thead>
       <tbody>
  <tr *ngFor="let epr of reportsService.employeePayrollList">   
