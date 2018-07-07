@@ -1,15 +1,15 @@
-<h2>Employee List</h2>
+
  <table class="table table-sm  table-striped"> 
-    <thead>
+    <thead class="table-head">
         <tr>
-          <th>Firstname</th>
-          <th>Emp Code</th>
+          <th>Employee Name</th>
+          <th>Employee Code</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
  <tr *ngFor="let employee of employeeService.employeeList">   
-    <td>{{ employee.FirstName }} - {{ employee.LastName}}</td>
+    <td>{{ employee.FirstName }} - {{ employee.MiddleName }} - {{ employee.LastName}}</td>
     <td>{{ employee.EmpCode }}</td>
     <td>
       <a  class="btn" (click)="showForEdit(employee)" title="Edit">
@@ -20,5 +20,65 @@
         </a>
     </td>
   </tr> 
+  <tr >   
+      <td>test</td>
+      <td>123</td>
+      <td class="actions">
+        <a  class="btn" (click)="showForEdit(employee)" title="Edit">
+          <i class="fa fa-pencil-square-o"></i>
+        </a>
+        <a  class="btn text-danger " (click) = "onDeleteEmployee(employee.EmpID)"  title="Delete">
+            <i class="fa fa-trash-o"></i>
+          </a>
+      </td>
+    </tr> 
+    <tr >   
+        <td>test</td>
+        <td>123</td>
+        <td class="actions">
+          <a  class="btn" (click)="showForEdit(employee)" title="Edit">
+            <i class="fa fa-pencil-square-o"></i>
+          </a>
+          <a  class="btn text-danger " (click) = "onDeleteEmployee(employee.EmpID)"  title="Delete">
+              <i class="fa fa-trash-o"></i>
+            </a>
+        </td>
+      </tr> 
+      <tr >   
+          <td>test</td>
+          <td>123</td>
+          <td class="actions">
+            <a  class="btn" (click)="showForEdit(employee)" title="Edit">
+              <i class="fa fa-pencil-square-o"></i>
+            </a>
+            <a  class="btn text-danger " (click) = "onDeleteEmployee(employee.EmpID)"  title="Delete">
+                <i class="fa fa-trash-o"></i>
+              </a>
+          </td>
+        </tr> 
+        <tr >   
+            <td>test</td>
+            <td>123</td>
+            <td class="actions">
+              <a  class="btn" (click)="showForEdit(employee)" title="Edit">
+                <i class="fa fa-pencil-square-o"></i>
+              </a>
+              <a  class="btn text-danger " (click) = "onDeleteEmployee(employee.EmpID)"  title="Delete">
+                  <i class="fa fa-trash-o"></i>
+                </a>
+            </td>
+          </tr> 
+          <tr >   
+              <td>test</td>
+              <td>123</td>
+              <td  class="actions">
+                <a  class="btn" (click)="showForEdit(employee)" title="Edit">
+                  <i class="fa fa-pencil-square-o"></i>
+                </a>
+                <a  class="btn text-danger " (click) = "onDeleteEmployee(employee.EmpID)"  title="Delete">
+                    <i class="fa fa-trash-o"></i>
+                  </a>
+              </td>
+            </tr> 
 </tbody>
 </table> 

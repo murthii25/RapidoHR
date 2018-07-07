@@ -1,13 +1,12 @@
 
-<h2 class="page-heading">Employee Payrool</h2>
-<form action="" class="form-inline">
+<form action="" class="form-inline text-right">
   <div class="form-group">
 <input type="search" class="form-control" placeholder="Enter empcode" #search>
 </div>
 <button type="button" class="btn btn-primary" (click)="getEmpPayroll(search.value)">Search</button>
 </form>
 <hr />
-<div class="col-md-6">
+<div class="col-md-8 offset-md-2">
 <form action="" class="payroll-form hr-form" #payrollForm="ngForm" (ngSubmit)="onSubmit(payrollForm)"> 
   <h2>Employee Payroll</h2> 
   <div class="row">
@@ -17,12 +16,12 @@
   <div class="form-group col-md-4">
     <label>Basic</label>
     <input  class="form-control" name="basic" #basic="ngModel" [(ngModel)]="payrollService.selectedEmpPayroll.basic"  required>
-  <!-- <div class="validation-error" *ngIf="basic.invalid && basic.touched">The field is required</div> -->
+ 
   </div>
   <div class="form-group col-md-4">
     <label>DA</label>
     <input  class="form-control" name="DA" #DA="ngModel" [(ngModel)]="payrollService.selectedEmpPayroll.DA" required>
-    <!-- <div class="validation-error" *ngIf="DA.invalid && MiddleName.touched">The field is required</div> -->
+    
   </div> 
   <div class="form-group col-md-4">
     <label>HRA </label>
@@ -85,7 +84,7 @@
   <div class="form-group col-md-4">
       <label>Net Pay</label>
     <input  class="form-control" name="Net_Pay" #Net_Pay="ngModel" [(ngModel)]="payrollService.selectedEmpPayroll.Net_Pay"  required>
-    <!-- <div class="validation-error" *ngIf="Net_Pay.invalid && Net_Pay.touched">The field is required</div> -->
+    
   </div>  
 
 
