@@ -35,7 +35,8 @@
           </tr>
       </thead>
       <tbody>
- <tr *ngFor="let epr of reportsService.employeePayrollList">   
+ <tr *ngFor="let epr of reportsService.employeePayrollList; let i = index">  
+   <td>{{ i + 1}}</td> 
     <td>{{ epr.EmpName }} </td>
     <td>{{ epr.Designation }} </td>
     <td>{{ epr.Basic }}</td>

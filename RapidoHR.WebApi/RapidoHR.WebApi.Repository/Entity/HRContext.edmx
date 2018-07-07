@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="RapidoERP_KMBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="RapidoERP_KMBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="EmpDesignation">
           <Key>
             <PropertyRef Name="EMPDesgID" />
@@ -29,6 +29,7 @@
           <Property Name="Address" Type="nvarchar" MaxLength="150" />
           <Property Name="EmailId" Type="nvarchar" MaxLength="30" />
           <Property Name="ContactNo" Type="nvarchar" MaxLength="15" />
+          <Property Name="IsContract" Type="bit" Nullable="false" />
           <Property Name="DateCreated" Type="datetime" />
           <Property Name="Createdby" Type="nvarchar" MaxLength="30" />
         </EntityType>
@@ -43,12 +44,12 @@
           <Property Name="HRA" Type="numeric" Precision="10" Scale="5" />
           <Property Name="conveyance" Type="numeric" Precision="10" Scale="5" />
           <Property Name="Adhoc_allow" Type="numeric" Precision="10" Scale="5" />
-          <Property Name="PF_bank_by_banj" Type="numeric" Precision="10" Scale="5" />
+          <Property Name="PF_by_bank" Type="numeric" Precision="10" Scale="5" />
           <Property Name="PF_by_emp" Type="numeric" Precision="10" Scale="5" />
           <Property Name="Professional_tax" Type="numeric" Precision="10" Scale="5" />
           <Property Name="Festival_advance" Type="numeric" Precision="10" Scale="5" />
-          <Property Name="HG_Insurance" Type="bit" />
-          <Property Name="LIC" Type="bit" />
+          <Property Name="HG_Insurance" Type="bit" Nullable="false" />
+          <Property Name="LIC" Type="bit" Nullable="false" />
           <Property Name="Net_Pay" Type="numeric" Precision="10" Scale="5" />
           <Property Name="Date_created" Type="datetime" />
           <Property Name="Createdby" Type="nvarchar" MaxLength="30" />
@@ -111,6 +112,7 @@
           <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="EmailId" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="ContactNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="IsContract" Type="Boolean" Nullable="false" />
           <Property Name="DateCreated" Type="DateTime" Precision="3" />
           <Property Name="Createdby" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="EmpPayrolls" Relationship="RapidoERP_KMBModel.FK_EmpPayroll_EmployeeDetail" FromRole="EmployeeDetail" ToRole="EmpPayroll" />
@@ -126,12 +128,12 @@
           <Property Name="HRA" Type="Decimal" Precision="10" Scale="5" />
           <Property Name="conveyance" Type="Decimal" Precision="10" Scale="5" />
           <Property Name="Adhoc_allow" Type="Decimal" Precision="10" Scale="5" />
-          <Property Name="PF_bank_by_banj" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="PF_by_bank" Type="Decimal" Precision="10" Scale="5" />
           <Property Name="PF_by_emp" Type="Decimal" Precision="10" Scale="5" />
           <Property Name="Professional_tax" Type="Decimal" Precision="10" Scale="5" />
           <Property Name="Festival_advance" Type="Decimal" Precision="10" Scale="5" />
-          <Property Name="HG_Insurance" Type="Boolean" />
-          <Property Name="LIC" Type="Boolean" />
+          <Property Name="HG_Insurance" Type="Boolean" Nullable="false" />
+          <Property Name="LIC" Type="Boolean" Nullable="false" />
           <Property Name="Net_Pay" Type="Decimal" Precision="10" Scale="5" />
           <Property Name="Date_created" Type="DateTime" Precision="3" />
           <Property Name="Createdby" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
@@ -170,6 +172,7 @@
               <MappingFragment StoreEntitySet="EmployeeDetail">
                 <ScalarProperty Name="Createdby" ColumnName="Createdby" />
                 <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="IsContract" ColumnName="IsContract" />
                 <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
                 <ScalarProperty Name="EmailId" ColumnName="EmailId" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
@@ -195,7 +198,7 @@
                 <ScalarProperty Name="Festival_advance" ColumnName="Festival_advance" />
                 <ScalarProperty Name="Professional_tax" ColumnName="Professional_tax" />
                 <ScalarProperty Name="PF_by_emp" ColumnName="PF_by_emp" />
-                <ScalarProperty Name="PF_bank_by_banj" ColumnName="PF_bank_by_banj" />
+                <ScalarProperty Name="PF_by_bank" ColumnName="PF_by_bank" />
                 <ScalarProperty Name="Adhoc_allow" ColumnName="Adhoc_allow" />
                 <ScalarProperty Name="conveyance" ColumnName="conveyance" />
                 <ScalarProperty Name="HRA" ColumnName="HRA" />

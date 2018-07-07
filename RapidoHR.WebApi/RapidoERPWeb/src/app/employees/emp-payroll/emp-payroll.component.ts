@@ -27,7 +27,7 @@ export class EmpPayrollComponent implements OnInit {
       HRA: null,
       conveyance: null,
       Adhoc_allow: null,
-      PF_bank_by_banj: null,
+      PF_by_bank: null,
       PF_by_emp: null,
       Professional_tax: null,
       Festival_advance: null,

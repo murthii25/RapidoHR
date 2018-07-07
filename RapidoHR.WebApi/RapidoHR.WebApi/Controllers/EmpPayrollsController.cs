@@ -52,7 +52,7 @@ namespace RapidoHR.WebApi.Controllers
                                         HRA = dpj.HRA,
                                         conveyance = dpj.conveyance,
                                         Adhoc_allow = dpj.Adhoc_allow,
-                                        PF_bank_by_banj = dpj.PF_bank_by_banj,
+                                        PF_by_bank = dpj.PF_by_bank,
                                         PF_by_emp = dpj.PF_by_emp,
                                         Professional_tax = dpj.Professional_tax,
                                         Festival_advance = dpj.Festival_advance,

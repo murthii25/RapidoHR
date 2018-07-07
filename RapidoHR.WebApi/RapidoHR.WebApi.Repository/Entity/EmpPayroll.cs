@@ -21,12 +21,12 @@ namespace RapidoHR.WebApi.Repository.Entity
         public Nullable<decimal> HRA { get; set; }
         public Nullable<decimal> conveyance { get; set; }
         public Nullable<decimal> Adhoc_allow { get; set; }
-        public Nullable<decimal> PF_bank_by_banj { get; set; }
+        public Nullable<decimal> PF_by_bank { get; set; }
         public Nullable<decimal> PF_by_emp { get; set; }
         public Nullable<decimal> Professional_tax { get; set; }
         public Nullable<decimal> Festival_advance { get; set; }
-        public Nullable<bool> HG_Insurance { get; set; }
-        public Nullable<bool> LIC { get; set; }
+        public bool HG_Insurance { get; set; }
+        public bool LIC { get; set; }
         public Nullable<decimal> Net_Pay { get; set; }
         public Nullable<System.DateTime> Date_created { get; set; }
         public string Createdby { get; set; }
