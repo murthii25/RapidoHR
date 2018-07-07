@@ -25,14 +25,16 @@ div.validation-error{
     color: #f70d0d;
     font-size: 0.7rem;
 }
-form.emp-form
+form.hr-form
 {
     background-color: #f3f0f0;
     border-radius:4px;
     padding: 12px 30px 30px;
    
 }
-
+.form-group label{
+    font-size: 14px;
+}
 .form-control:focus{
     box-shadow: inherit;
     border-width:2px;
@@ -115,7 +117,12 @@ padding:.5rem 0.5rem;
 .side-bar-nav .navbar-expand-sm .navbar-nav{
     color:#edfedf;
 }
-.side-bar-nav .navbar-expand-sm .navbar-nav .dropdown-menu a:hover,
+.navbar a.active-link{
+    color:#ced0d2;
+}
+.side-bar-nav .navbar-expand-sm .navbar-nav .dropdown-menu a:hover{
+    color:#e3e4e4;
+}
 .navbar-expand-sm .navbar-nav .nav-link:hover{
     background-color:transparent;
     color: #032b58;
@@ -141,7 +148,7 @@ padding:.5rem 0.5rem;
     background-color: #848383;
 }
 .btn{
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     transition:all ease 0.8s;
 }
