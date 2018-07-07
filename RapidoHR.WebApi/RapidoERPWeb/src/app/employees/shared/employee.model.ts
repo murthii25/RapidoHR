@@ -12,6 +12,7 @@ export class Employee {
         Address: string;
         EmailId: string;
         ContactNo: number | null;
+        IsContract: boolean;
         DateCreated: Date | string | null;
         Createdby: string;
 }

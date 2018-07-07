@@ -30,6 +30,7 @@ export class EmployeeComponent implements OnInit {
       Address:  '',
       EmailId:  '',
       ContactNo: null,
+      IsContract:false,
       DateCreated: '',
       Createdby: ''
     }

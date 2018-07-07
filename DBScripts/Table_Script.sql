@@ -32,6 +32,7 @@ CREATE TABLE [dbo].[EmployeeDetail](
 	[Address] [nvarchar](150) NULL,
 	[EmailId] [nvarchar](30) NULL,
 	[ContactNo] [nvarchar](15) NULL,
+	[IsContract] [bit] NOT NULL,
 	[DateCreated] [datetime] NULL,
 	[Createdby] [nvarchar](30) NULL,
  CONSTRAINT [PK_EmployeeDetails] PRIMARY KEY CLUSTERED 
@@ -47,6 +48,8 @@ IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[
 ALTER TABLE [dbo].[EmpPayroll] DROP CONSTRAINT [FK_EmpPayroll_EmployeeDetail]
 GO
 
+ALTER TABLE [dbo].[EmployeeDetail] ADD  DEFAULT ((0)) FOR [IsContract]
+GO
 
 
 /****** Object:  Table [dbo].[EmpPayroll]    Script Date: 06/18/2018 07:13:07 ******/
@@ -64,12 +67,12 @@ CREATE TABLE [dbo].[EmpPayroll](
 	[HRA] [numeric](10, 5) NULL,
 	[conveyance] [numeric](10, 5) NULL,
 	[Adhoc_allow] [numeric](10, 5) NULL,
-	[PF_bank_by_banj] [numeric](10, 5) NULL,
+	[PF_by_bank] [numeric](10, 5) NULL,
 	[PF_by_emp] [numeric](10, 5) NULL,
 	[Professional_tax] [numeric](10, 5) NULL,
 	[Festival_advance] [numeric](10, 5) NULL,
-	[HG_Insurance] [bit] NULL,
-	[LIC] [bit] NULL,
+	[HG_Insurance] [bit] NOT NULL,
+	[LIC] [bit] NOT NULL,
 	[Net_Pay] [numeric](10, 5) NULL,
 	[Date_created] [datetime] NULL,
 	[Createdby] [nvarchar](30) NULL,
@@ -88,6 +91,10 @@ GO
 ALTER TABLE [dbo].[EmpPayroll] CHECK CONSTRAINT [FK_EmpPayroll_EmployeeDetail]
 GO
 
+ALTER TABLE [dbo].[EmpPayroll] ADD  DEFAULT ((0)) FOR [HG_Insurance]
+GO
+ALTER TABLE [dbo].[EmpPayroll] ADD  DEFAULT ((0)) FOR [LIC]
+GO
 
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[EmpDesignation]') AND type in (N'U'))
 DROP TABLE [dbo].[EmpDesignation]
