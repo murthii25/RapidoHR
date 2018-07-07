@@ -12,7 +12,7 @@ namespace RapidoHR.WebApi.Model
         public decimal ? HRA { get; set; }
         public decimal ? conveyance { get; set; }
         public decimal ? Adhoc_allow { get; set; }
-        public decimal ? PF_bank_by_banj { get; set; }
+        public decimal ? PF_by_bank { get; set; }
         public decimal ? PF_by_emp { get; set; }
         public decimal ? Professional_tax { get; set; }
         public decimal ? Festival_advance { get; set; }

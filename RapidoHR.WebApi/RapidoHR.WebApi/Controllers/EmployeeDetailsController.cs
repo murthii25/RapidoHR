@@ -30,7 +30,7 @@ namespace RapidoHR.WebApi.Controllers
                               {
                                   EmpID = ed.EmpID,
                                   EmpCode = ed.EmpCode,
-                                  FirstName = ed.LastName,
+                                  FirstName = ed.FirstName,
                                   MiddleName = ed.MiddleName,
                                   LastName = ed.LastName,
                                   Gender = ed.Gender,
@@ -39,6 +39,7 @@ namespace RapidoHR.WebApi.Controllers
                                   Address = ed.Address,
                                   EmailId = ed.EmailId,
                                   ContactNo = ed.ContactNo,
+                                  IsContract = ed.IsContract,
                                   DateCreated = ed.DateCreated,
                                   Createdby = ed.Createdby
                               }
@@ -100,11 +101,7 @@ namespace RapidoHR.WebApi.Controllers
         // POST: api/EmployeeDetails
         [ResponseType(typeof(EmployeeDetail))]
         public async Task<IHttpActionResult> PostEmployeeDetail(EmployeeDetail employeeDetail)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        {            
             employeeDetail.EmpID = employeeDetail.EmpID == Guid.Empty ? Guid.NewGuid() : employeeDetail.EmpID;
             employeeDetail.DateCreated = DateTime.Now;
             employeeDetail.Createdby = createdBy;

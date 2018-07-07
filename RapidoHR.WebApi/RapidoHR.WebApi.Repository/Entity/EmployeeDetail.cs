@@ -31,6 +31,7 @@ namespace RapidoHR.WebApi.Repository.Entity
         public string Address { get; set; }
         public string EmailId { get; set; }
         public string ContactNo { get; set; }
+        public bool IsContract { get; set; }
         public Nullable<System.DateTime> DateCreated { get; set; }
         public string Createdby { get; set; }
     

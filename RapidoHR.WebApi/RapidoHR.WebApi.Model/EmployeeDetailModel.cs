@@ -15,6 +15,7 @@ namespace RapidoHR.WebApi.Model
         public string Address { get; set; }
         public string EmailId { get; set; }
         public string ContactNo { get; set; }
+        public bool IsContract { get; set; }
         public DateTime? DateCreated { get; set; }
         public string Createdby { get; set; }
     }
