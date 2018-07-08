@@ -10,6 +10,7 @@ import { EmployeeComponent } from './employees/employee/employee.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 import { EmpPayrollComponent } from './employees/emp-payroll/emp-payroll.component';
 import { EmpPayrollReportsComponent } from './employees/emp-payroll-reports/emp-payroll-reports.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -19,13 +20,18 @@ import { EmpPayrollReportsComponent } from './employees/emp-payroll-reports/emp-
     EmployeeComponent,
     EmployeeListComponent,
     EmpPayrollComponent,
-    EmpPayrollReportsComponent
+    EmpPayrollReportsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([{
+    RouterModule.forRoot([
+    {
+      path: '/login', component: LoginComponent 
+    },
+    {
       path : 'employee',
       component : EmployeesComponent
     },
