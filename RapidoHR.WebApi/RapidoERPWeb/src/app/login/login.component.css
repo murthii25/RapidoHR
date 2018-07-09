@@ -23,4 +23,34 @@ body{
         font-size: 1rem;
     }
     }
-
+    .login-container{background-color:#fbfbfb;}
+    .login .login-wrapper{ -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    position: relative;
+    height: 100%;
+    width: 360px;
+    margin: 0 auto;
+}
+.login .login-box-inner {
+    background-color: #fff;
+    -webkit-box-shadow: 0 7px 25px rgba(0, 0, 0, .08);
+    box-shadow: 0 7px 25px rgba(0, 0, 0, .08);
+    padding: 25px 25px 25px 25px;
+    text-align: left;
+    border-radius: 3px;
+    border: 1px solid #cad7e8;
+}
+.login .login-box {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    padding-top:80px;
+}
+.login .erro-msg{
+    font-size: 14px;
+    position: relative;
+    top: -12px;
+}
