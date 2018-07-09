@@ -11,6 +11,7 @@ import { EmployeeListComponent } from './employees/employee-list/employee-list.c
 import { EmpPayrollComponent } from './employees/emp-payroll/emp-payroll.component';
 import { EmpPayrollReportsComponent } from './employees/emp-payroll-reports/emp-payroll-reports.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -21,15 +22,20 @@ import { LoginComponent } from './login/login.component';
     EmployeeListComponent,
     EmpPayrollComponent,
     EmpPayrollReportsComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
+      
     {
-      path: '/login', component: LoginComponent 
+      path: '', component: LoginComponent 
+    },
+    {
+      path:'Home', component : HomeComponent
     },
     {
       path : 'employee',
@@ -42,7 +48,8 @@ import { LoginComponent } from './login/login.component';
     {
       path : 'payrollreports',
       component : EmpPayrollReportsComponent
-    }
+    },
+    {path:'**',redirectTo:''}
 
   ])
   ],

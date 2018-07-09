@@ -1,0 +1,71 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class=" col-md-12">
+           <nav class="navbar navbar-default">
+               <div class="container-fluid">
+                 
+                 <div class="navbar-header">
+                   <a class="navbar-brand" href="#">Rapido HR</a>
+                 </div>
+                 <ul class="nav justify-content-end">
+                     
+                     <li class="nav-item active">
+                       <a class="nav-link" href="#"><span class="user-profile"><i class="fa fa-user"></i></span>User Name</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" href="#">Logout</a>
+                     </li>
+                     
+                   </ul>
+                 </div>
+                 <h2 class="primary-name">KankaMahaLakshmi  Co-Op Bank Ltd</h2>
+               
+             </nav>
+           </div>
+         </div>
+       
+       
+        <div class="row">
+           <div class="col-md-12 side-bar-nav">
+               <nav class="navbar side-nav-bar navbar-expand-sm">
+                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                       <span class="navbar-toggler-icon">---</span>
+                     </button>                     
+                   <ul class="navbar-nav">
+                     <li class="nav-item dropdown">
+                       <a class="nav-link dropdown-toggle" id="dropdownMenuButton"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                       >Employee</a>
+                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                         <li> <a  routerLink="/employee" routerLinkActive="active-link">Registration</a> </li>
+                       </ul>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" routerLink="/payroll">Employee Payroll</a>
+                     </li>
+                     <li class="nav-item  dropdown">
+                         <a class="nav-link  dropdown-toggle" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                          >
+                           Employee Payroll Report</a>
+                           <ul class="dropdown-menu report" aria-labelledby="dropdownMenuButton1">
+                               <li> 
+                                 <a  routerLink="/payrollreports" routerLinkActive="active-link">Regular Employee Report</a> </li>
+                                 <li> 
+                                     <a  routerLink="/payrollreports" routerLinkActive="active-link" >Contract Employee Report</a> </li>
+                             </ul>
+                       </li>
+                   </ul>
+                 </nav>       
+                
+           </div> 
+           </div>
+           <div class="row">
+           <div class="col-md-12">
+               <router-outlet></router-outlet>
+           </div>
+
+</div>
+<footer>
+&copy; 2018 RapidoERP
+</footer>
+</div> 
