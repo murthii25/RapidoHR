@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid login-container">
   <div class="row">
     <div class=" col-md-12">
            <nav class="navbar navbar-default">
@@ -15,31 +15,42 @@
          </div>
        
 <div class="container" >
-  <div class="title">
+    <div class= "login">
+        <div class="login-box">
+        <div class="login-wrapper">
+            <div class="login-box-inner">
+  <h2>
       Welcome
-  </div>
+  </h2>
   <div class="panel-body">
-      <div class="row">
-          <div class="input-field col s12">
+      
+          <div class="form-group">
+                <label for="email" >Email</label>
+                <div >
               <input [(ngModel)]="user.email" id="email" 
-                  type="email" class="validate">
-              <label for="email">Email</label>
+                  type="email" class="validate form-control">
+                </div>
           </div>
-      </div>
+      
 
-      <div class="row">
-          <div class="input-field col s12">
+      
+          <div class="form-group">
+                <label for="password">Password</label>
               <input [(ngModel)]="user.password" id="password" 
-                  type="password" class="validate">
-              <label for="password">Password</label>
+                  type="password" class="validate  form-control">
+              
           </div>
-      </div>
+     
 
-      <span>{{errorMsg}}</span>
+      <span class="text-danger erro-msg">{{errorMsg}}</span>
       <button (click)="login()" 
-          class="btn waves-effect waves-light" 
+          class="btn btn-primary btn-block" 
           type="submit" name="action">Login</button>
   </div>
-  
+</div>
+
+</div>
+</div>
+</div>
 </div>
 </div>
