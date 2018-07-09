@@ -7,3 +7,31 @@
 .emp-payroll-reports.table thead tr.grid-heading th:last-child{
     border-right:1px solid #dee2e6;
 }
+
+
+body{
+    font-size: 16px;
+}
+.bg-secondary{
+    background-color:#1E88E5;
+}
+.primary-name{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    color:#f3f1f1;
+    bottom: 0;
+    font-size:1.5rem;
+}
+.navbar-toggler-icon{
+    color:#fff;
+}
+.side-bar-nav .navbar-expand-sm .navbar-nav{
+    flex-direction: column;
+}
+@media screen and (max-width: 800px){
+    .primary-name{
+        font-size: 1rem;
+    }
+    }
+

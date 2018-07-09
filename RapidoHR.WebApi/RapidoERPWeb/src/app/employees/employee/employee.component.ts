@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import  { EmployeeService } from '../shared/employee.service';
 import { NgForm } from '@angular/forms';
+import { AuthenticationService } from '../../shared/authentication.service';
 
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
-  styleUrls: ['./employee.component.css']
+  styleUrls: ['./employee.component.css'],
+  providers:[AuthenticationService]
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor(private employeeService : EmployeeService) { }
+  constructor(private employeeService : EmployeeService,private _service:AuthenticationService) { }
 
   ngOnInit() {
+    //this._service.checkCredentials();
     this.resetForm();
   }
   resetForm(form? : NgForm)
@@ -38,6 +41,7 @@ export class EmployeeComponent implements OnInit {
   }
   onSubmit(form : NgForm)
   {
+    var myObj = JSON.parse(window.localStorage.getItem("user"));
     if(form.value.EmpID == null)
     {
           this.employeeService.PostEmployee(form.value)
