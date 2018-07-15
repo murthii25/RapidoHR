@@ -37,34 +37,41 @@ namespace RapidoHR.WebApi.Controllers
         [ResponseType(typeof(EmpPayroll))]
         public async Task<IHttpActionResult> GetEmpCodePayroll(string empCode)
         {
-            var result = await (from e in db.EmployeeDetails
-                                join p in db.EmpPayrolls on e.EmpID equals p.EmpID into dp
-                                from dpj in dp.DefaultIfEmpty()
-                                where e.EmpCode == empCode
-                                select new
-                                {
-                                    empPayrollModel = new EmpPayrollModel
+            if ((GetEmployeeExist(empCode)==false))
+            {
+                return BadRequest("Employee code is empty or doesn't exist");
+            }
+            else
+            {
+                var result = await (from e in db.EmployeeDetails
+                                    join p in db.EmpPayrolls on e.EmpID equals p.EmpID into dp
+                                    from dpj in dp.DefaultIfEmpty()
+                                    where e.EmpCode == empCode
+                                    select new
                                     {
-                                        EmpPRID = dpj.EmpPRID == null ? Guid.Empty : dpj.EmpPRID,
-                                        EmpID = e.EmpID == null ? Guid.Empty : e.EmpID,
-                                        basic = dpj.basic,
-                                        DA = dpj.DA,
-                                        HRA = dpj.HRA,
-                                        conveyance = dpj.conveyance,
-                                        Adhoc_allow = dpj.Adhoc_allow,
-                                        PF_by_bank = dpj.PF_by_bank,
-                                        PF_by_emp = dpj.PF_by_emp,
-                                        Professional_tax = dpj.Professional_tax,
-                                        Festival_advance = dpj.Festival_advance,
-                                        HG_Insurance = dpj.HG_Insurance,
-                                        LIC = dpj.LIC,
-                                        Net_Pay = dpj.Net_Pay,
-                                        Date_created = dpj.Date_created,
-                                        Createdby = dpj.Createdby
-                                    }
+                                        empPayrollModel = new EmpPayrollModel
+                                        {
+                                            EmpPRID = dpj.EmpPRID == null ? Guid.Empty : dpj.EmpPRID,
+                                            EmpID = e.EmpID == null ? Guid.Empty : e.EmpID,
+                                            basic = dpj.basic,
+                                            DA = dpj.DA,
+                                            HRA = dpj.HRA,
+                                            conveyance = dpj.conveyance,
+                                            Adhoc_allow = dpj.Adhoc_allow,
+                                            PF_by_bank = dpj.PF_by_bank,
+                                            PF_by_emp = dpj.PF_by_emp,
+                                            Professional_tax = dpj.Professional_tax,
+                                            Festival_advance = dpj.Festival_advance,
+                                            HG_Insurance = dpj.HG_Insurance,
+                                            LIC = dpj.LIC,
+                                            Net_Pay = dpj.Net_Pay,
+                                            Date_created = dpj.Date_created,
+                                            Createdby = dpj.Createdby
+                                        }
 
-                                }).FirstOrDefaultAsync();
-            return Ok(result);
+                                    }).FirstOrDefaultAsync();
+                return Ok(result);
+            }
         }
 
         // PUT: api/EmpPayrolls/5
@@ -163,6 +170,21 @@ namespace RapidoHR.WebApi.Controllers
         private bool EmpPayrollExists(Guid id)
         {
             return db.EmpPayrolls.Count(e => e.EmpPRID == id) > 0;
+        }
+
+        private bool GetEmployeeExist(string empcode)
+        {
+            if (empcode != string.Empty)
+            {
+                var employeeDetail =  db.EmployeeDetails.Where(x => x.EmpCode == empcode).SingleOrDefault();
+                if (employeeDetail == null)
+                {
+                    return false;
+                }
+
+                return true;
+            }
+            return false;
         }
     }
 }
