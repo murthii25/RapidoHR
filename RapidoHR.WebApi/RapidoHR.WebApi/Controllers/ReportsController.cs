@@ -39,14 +39,14 @@ namespace RapidoHR.WebApi.Controllers
                                             HRA = dpj.HRA.ToString(),
                                             conveyance = dpj.conveyance.ToString(),
                                             Adhoc_allow = dpj.Adhoc_allow.ToString(),
-                                            Total = (dpj.basic + dpj.DA + dpj.HRA + dpj.Adhoc_allow).ToString(),
+                                            Total = (dpj.basic + dpj.DA + dpj.HRA + dpj.conveyance + dpj.Adhoc_allow).ToString(),
                                             PF_bank_by_banj = dpj.PF_by_bank.ToString(),
                                             PF_by_emp = dpj.PF_by_emp.ToString(),
                                             Professional_tax = dpj.Professional_tax.ToString(),
                                             Festival_advance = dpj.Festival_advance.ToString(),
                                             HG_Insurance = dpj.HG_Insurance != false ? "False" : (dpj.HG_Insurance).ToString(),
                                             LIC = dpj.LIC != false ? "False" : (dpj.LIC).ToString(),
-                                            Net_Pay = ((dpj.basic + dpj.DA + dpj.HRA + dpj.Adhoc_allow) - (dpj.PF_by_bank + dpj.PF_by_emp + dpj.Professional_tax + dpj.Festival_advance)).ToString()
+                                            Net_Pay = ((dpj.basic + dpj.DA + dpj.HRA + dpj.conveyance + dpj.Adhoc_allow) - (dpj.PF_by_bank + dpj.PF_by_emp + dpj.Professional_tax + dpj.Festival_advance)).ToString()
                                         }
 
                                     }).ToListAsync();

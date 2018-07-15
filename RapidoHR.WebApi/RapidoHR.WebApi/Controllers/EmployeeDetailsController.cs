@@ -61,6 +61,27 @@ namespace RapidoHR.WebApi.Controllers
             return Ok(employeeDetail);
         }
 
+        // GET: api/EmployeeDetails/5
+        [HttpGet, Route("EmployeeExist/{empcode}")]
+        [ResponseType(typeof(string))]
+        public async Task<IHttpActionResult> GetEmployeeExist(string empcode)
+        {
+            if (empcode != string.Empty)
+            {
+                var employeeDetail = await db.EmployeeDetails.Where(x => x.EmpCode == empcode).SingleOrDefaultAsync();
+                if (employeeDetail == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok();
+            }
+            else
+            {
+                return BadRequest("Empcode is empty");
+            }
+        }
+
         // PUT: api/EmployeeDetails/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutEmployeeDetail(Guid id, EmployeeDetail employeeDetail)
